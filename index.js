@@ -14,6 +14,7 @@ const renderizaLista = (lista, tarefas) => {
     const itemText = document.createTextNode(
       `${tarefa.description} (${tarefa.done}) `
     );
+    const listItem = document.createElement("li");
 
     const buttonDelete = document.createElement("button");
     buttonDelete.innerHTML = "X";
@@ -25,9 +26,10 @@ const renderizaLista = (lista, tarefas) => {
 
     if(tarefa.done === true) {
       UpdateCheckbox.checked = true;
+      listItem.style.textDecoration = "line-through";
     }
 
-    const listItem = document.createElement("li");
+    ;
     listItem.appendChild(itemText);
     listItem.appendChild(UpdateCheckbox);
     listItem.appendChild(buttonDelete);
